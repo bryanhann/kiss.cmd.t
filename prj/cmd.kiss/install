@@ -1,1 +1,5 @@
-$(dirname $0)/kiss ..install
+lbin=$(dirname $0)/lbin
+for name in $(ls $lbin); do
+    $lbin/$name ..install
+done
+
