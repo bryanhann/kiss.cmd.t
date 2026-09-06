@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+this=${BASH_SOURCE[0]}
+while [ -L $this ]; do this=$(readlink $this); done
+cd $(dirname $this)
+source $PWD/config.sh
+echo done
+read
+for name in $(ls cmd.*); do
+    echo $name
+done
+echo $PWD
+cmd_name=$(basename $PWD)
+cmd_name=${cmd_name:4}
+
+real=$PWD/main.sh
+link=${BCH0_BIN:-$HOME/.local/bin}/$cmd_name
+    echo creating symlink:
+    echo "    real: $real"
+    echo "    link: $link"
+    [ -L $link ] && rm $link
+    ln -s $real $link
+read
+
+src=$PWD/lbin
+dst=${BCH0_BIN:-$HOME/.local/bin}
+mkdir -p $dst
+for name in $(ls $src); do
+    real=$src/$name
+    link=$dst/$name
+    echo creating symlink:
+    echo "    real: $real"
+    echo "    link: $link"
+    [ -L $link ] && rm $link
+    ln -s $real $link
+done
+

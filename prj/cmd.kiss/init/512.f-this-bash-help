@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-this-bash-help () {
-    clr_bold "usage:"
-    clr_bold "    $this_name . subcommand"
-    clr_bold "subcommands:"
-    for name in $(ls $this_bin); do
-        clr_bold "    $name"
-    done
-}

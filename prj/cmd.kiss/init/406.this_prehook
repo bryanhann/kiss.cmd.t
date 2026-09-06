@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-this_prehook=$this_init/hooks.d/pre-exec.sh

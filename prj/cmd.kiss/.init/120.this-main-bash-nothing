@@ -1,0 +1,4 @@
+this-main-nothing() {
+    # simply return. user simply wanted activation
+    return
+}

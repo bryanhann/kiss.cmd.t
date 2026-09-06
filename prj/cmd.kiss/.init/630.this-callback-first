@@ -1,0 +1,6 @@
+this-callback-first () {
+    export this_callback=$(this-callback-file)
+    mkdir -p $(this-callback-dir)
+    touch $(this-callback-file)
+    echo "#CALLBACK FILE" > $(this-callback-file)
+}

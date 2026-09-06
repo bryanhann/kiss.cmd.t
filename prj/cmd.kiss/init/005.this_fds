@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-[   $0. == $link. ] && export this_fin=exit
-[   $0. == $link. ] && export this_dot=
-[ ! $0. == $link. ] && export this_fin=return
-[ ! $0. == $link. ] && export this_dot=.
-

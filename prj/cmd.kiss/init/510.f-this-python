@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-this-python () {
-    uv run --project $this_prj $this_main "$@"
-    export this_err=$?
-}

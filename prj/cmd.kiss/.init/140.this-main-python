@@ -1,0 +1,6 @@
+this-main-python () {
+    export my_callback=$this_callback
+    export my_name=$this_name
+    uv run --project $this_prj $this_main "$@"
+    export err=$?
+}

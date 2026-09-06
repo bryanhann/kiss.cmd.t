@@ -1,0 +1,8 @@
+this-main-bash-help () {
+    local subcmd
+    clr_bold "usage:"
+    for subcmd in $(ls -a $this_bin | sort); do
+        [ -f $this_bin/$subcmd ] && clr_bold "    $this_name .$subcmd"
+    done
+    clr_bold "    $this_name -h|--help"
+}

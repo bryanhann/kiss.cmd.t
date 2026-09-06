@@ -1,0 +1,3 @@
+this-callback-file () {
+    echo $(this-callback-dir)/callback.sh
+}

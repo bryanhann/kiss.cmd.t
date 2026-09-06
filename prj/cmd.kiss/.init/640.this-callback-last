@@ -1,0 +1,5 @@
+this-callback-last () {
+    source $(this-callback-file)
+    rm $(this-callback-file)
+    rmdir $(this-callback-dir)
+}

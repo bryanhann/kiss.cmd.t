@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-this-bash-run () {
-    $this_dot $this_bin/"$@"
-    export this_err=$?
-}
-

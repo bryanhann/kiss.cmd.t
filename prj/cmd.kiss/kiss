@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+_exp () { export $1="$2"; }
+    
+link=${BASH_SOURCE[0]}
+this=${BASH_SOURCE[0]}
+while [ -L $this ]; do this=$(readlink $this); done
+pushd $(dirname $this) > /dev/null
+this=$PWD/$(basename $this)
+popd > /dev/null
+
+[   $link == $0 ] && export this_dot=
+[   $link == $0 ] && export this_fin=exit
+[ ! $link == $0 ] && export this_dot=.
+[ ! $link == $0 ] && export this_fin=return
+
+_exp this_real  $this
+_exp this_name  $(basename $this_real)
+_exp this_here  $(dirname $this_real)
+_exp this_prj   $(dirname $this_here)
+_exp this_init  $this_here/init
+_exp this_bin   $this_here/bin
+_exp this_main  $this_here/app/main.py
+_exp this_brace $this_here/.brace
+
+#export __init__="source $this_here/init/init.sh"
+source $this_here/.init/init.sh
+this-main "$@"
+
+

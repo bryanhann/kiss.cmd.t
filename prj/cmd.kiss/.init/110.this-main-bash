@@ -1,0 +1,14 @@
+this-main-bash () {
+    local cmd=${1:1}
+    shift
+    if [ -z $cmd ] && [ "$this_dot" == "." ]; then
+         this-main-bash-nothing
+         return 0
+    elif [ -f $this_bin/$cmd ]; then
+         $this_dot $this_bin/$cmd "$@"
+         return $?
+    else
+        this-main-bash-help
+        return 0
+    fi
+}

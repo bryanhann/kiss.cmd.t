@@ -1,0 +1,12 @@
+this-main () {
+    this-callback-first
+    if [ "${1:0:1}" == "." ]; then
+       this-main-bash "$@"
+       err=$?
+    else
+       this-main-python "$@"
+       err=$?
+    fi
+    this-callback-last
+    return $err
+}

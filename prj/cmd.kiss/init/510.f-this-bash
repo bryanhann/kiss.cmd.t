@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-this-bash () {
-    shift
-    [   -f $this_bin/$1 ] && this-bash-run  "$@" 
-    [ ! -f $this_bin/$1 ] && this-bash-help "$@" 
-}        
-

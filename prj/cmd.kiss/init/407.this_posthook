@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-this_posthook=$this_init/hooks.d/post-exec.sh

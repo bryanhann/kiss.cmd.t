@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-export my_callback=$this_callback
-
