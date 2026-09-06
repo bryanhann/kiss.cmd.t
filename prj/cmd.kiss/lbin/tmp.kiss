@@ -20,6 +20,7 @@ _exp this_here  $(dirname $(dirname $this_real))
 _exp this_prj   $(dirname $this_here)
 _exp this_init  $this_here/init
 _exp this_bin   $this_here/bin
+_exp this_app   $this_here/app
 _exp this_main  $this_here/app/main.py
 _exp this_brace $this_here/.brace
 
