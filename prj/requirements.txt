@@ -1,0 +1,13 @@
+fire==0.7.1
+iniconfig==2.3.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+packaging==26.3
+pluggy==1.6.0
+-e file:///Users/bch/kiss.cmd.t/prj
+pygments==2.21.0
+pytest==9.1.1
+pytest-env==1.7.0
+python-dotenv==1.2.3
+rich==15.0.0
+termcolor==3.3.0
