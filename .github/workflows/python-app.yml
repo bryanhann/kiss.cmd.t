@@ -3,6 +3,11 @@
 
 name: Python application
 
+# Sets the default working directory for all 'run' steps in this workflow
+defaults:
+  run:
+    working-directory: ./prj
+
 on:
   push:
     branches: [ "workflow" ]
