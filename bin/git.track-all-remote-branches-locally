@@ -1,0 +1,6 @@
+
+for remote in $(git branch -r | grep -v '\->'); do 
+    git branch --track "${remote#origin/}" "$remote" 2>/dev/null
+done
+git pull --all
+
