@@ -15,7 +15,8 @@ on:
     branches: [ "workflow" ]
 
 permissions:
-  contents: read
+  #contents: read
+  contents: write
 
 jobs:
   build:
