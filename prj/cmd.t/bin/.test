@@ -1,0 +1,8 @@
+_export () { export $1="$2"; }
+
+_export this ${BASH_SOURCE[0]}
+_export here $this.d
+_export log  $here/tmp.log
+_export PATH $here/bin:$PATH
+
+$here/main

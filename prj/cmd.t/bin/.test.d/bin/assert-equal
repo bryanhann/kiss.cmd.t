@@ -1,0 +1,12 @@
+do-pass () {
+    echo "assert-equal [$1] [$2]"
+    return 0
+}
+do-fail () {
+    echo "assert-equal [$1] [$2]"
+    return 1
+}
+
+
+name=$(basename $0)
+[ $1. == $2. ] && do-pass $1 $2 || do-fail $1 $2

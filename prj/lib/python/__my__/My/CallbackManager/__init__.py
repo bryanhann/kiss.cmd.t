@@ -1,5 +1,6 @@
 from __my__.OwnedObject import OwnedObject
-
+from __my__.util import err
+from pathlib import Path
 class CallbackManager(OwnedObject):
     """Manage access to the callback file.
     
@@ -35,3 +36,15 @@ class CallbackManager(OwnedObject):
         assert ret[-1]==''
         del ret[-1]
         return ret
+    def pushd(self, path):
+        errors=[]
+        self._boss.sourced() or errors.append( 'must source' )
+        Path(path).is_dir() or errors.append( 'not a dir' )
+        errors = '\n'.join(errors)
+        if errors:
+            err(errors)
+            return
+        path=str(path)
+        line = f"pushd {path}"
+        err( line )
+        self.append( f"{line} > /dev/null" )

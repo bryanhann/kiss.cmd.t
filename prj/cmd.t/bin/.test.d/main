@@ -1,0 +1,19 @@
+$__init__
+_export () { export $1="$2"; }
+_export tests  $here/tests
+_export prog   $this_name
+_export PATH   $bin:$PATH
+
+PASS=[$(clr_green clr_bold pass)]
+FAIL=[$(clr_red   clr_bold FAIL)]
+do-pass () { echo $PASS $*; }
+do-fail () { echo $FAIL $*; }
+
+rm $log > /dev/null
+for name in $(ls $tests); do
+    echo "----[$name]-------------------" >> $log
+    export test_name=$name
+    test=$tests/$name
+    $test >> $log &&  do-pass $test_name || do-fail $test_name
+
+done

@@ -35,6 +35,7 @@ def istmp(name):
 
 @dataclass 
 class My: 
+    """This is the root owner"""
     @property
     def ccc_istmp(self):
         name = self.name
@@ -43,6 +44,14 @@ class My:
         name = name.split('.')[0].lower()
         return name in 't tmp'.split()
 
+    def this(self, name):
+        key = f'this_{name}'
+        try:
+            return os.environ[key]
+        except KeyError:
+            return None
+    def sourced(self):
+        return self.this('fin') == 'return'
 MY=My()
 MY.repo      = RepoManager(MY)
 MY.name      = os.environ['my_name']

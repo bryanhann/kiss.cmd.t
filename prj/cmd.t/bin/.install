@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+prog=$this_name
+app=$this_app
+lib=$this_prj/lib/python
+lbin=${BCH0_BIN:-$HOME/.local/bin}
+real=$this_real
+link=$lbin/$prog
+
+
+$prog ..link $real $link
+
+for name in $(ls $lib); do
+    $prog ..link $lib/$name $app/$name
+done
+
+echo
+echo "====[$prog sys install]=================="
+$prog sys install
+
+echo
+echo "====[uv run pytest]=================="
+cd $this_prj
+uv run pytest
+
+echo
+echo "====[$prog ..test]=================="
+$prog ..test

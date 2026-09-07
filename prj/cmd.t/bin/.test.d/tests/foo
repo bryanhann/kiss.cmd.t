@@ -1,0 +1,2 @@
+result=$(. run name)
+. assert-equal $(. run name) $prog

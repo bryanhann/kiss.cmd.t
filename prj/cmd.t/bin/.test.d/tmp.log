@@ -1,0 +1,4 @@
+----[bar]-------------------
+assert-equal [app] [app]
+----[foo]-------------------
+assert-equal [t] [t]

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+makelink () {
+    local real=$1
+    local link=$2
+    echo "creating my symlink:"
+    echo "    real: $real"
+    echo "    link: $link"
+    [ -L $link ] && rm $link
+    ln -s $real $link
+}
+
+makelink $1 $2

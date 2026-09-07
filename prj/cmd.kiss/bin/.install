@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-lbin=${BCH0_BIN:-$HOME/.local/bin}
-real=$this_real
-link=$lbin/$this_name
-echo "creating symlink:"
-echo "    real: $real"
-echo "    link: $link"
-[ -L $link ] && rm $link
-ln -s $real $link

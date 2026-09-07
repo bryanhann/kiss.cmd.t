@@ -1,0 +1,2 @@
+. $prog sys go2 app 2> /dev/null
+. assert-equal app $(basename $PWD)

@@ -16,5 +16,12 @@ class RepoManager(OwnedObject):
         dash = dot.replace('.', '-')
         return f'{dash}.inner'
 
+    def install(self):
+        """Install the repos for this app
+
+        More info
+        """
+        self.remote.create()
+        self.local.create()
     @property
     def _path(self): return self._boss._repopath
