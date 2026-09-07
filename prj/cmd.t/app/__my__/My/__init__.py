@@ -61,8 +61,8 @@ MY._callback = Path(os.environ['my_callback'])
 MY._root     = Path(gitroot(__file__))
 MY._dname    = MY.name.replace('.','-')
 MY._reponame = f'{MY._dname}.inner'
-#MY._repopath = BCH0.data/MY._reponame
-MY._data      = MY._root/'my.data'
-MY._repopath = MY._data/MY._reponame
+MY._repopath = BCH0.data/MY._reponame
+#MY._data      = MY._root/'my.data'
+##MY._repopath = MY._data/MY._reponame
 
-MY._data.is_dir() or MY._data.mkdir()
+#MY._data.is_dir() or MY._data.mkdir()
